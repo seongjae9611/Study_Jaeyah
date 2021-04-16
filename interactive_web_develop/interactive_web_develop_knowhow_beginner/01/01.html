@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <!-- <script defer src="./js/main.js"></script> -->
+
+    <script>
+        let human;
+        let bg;
+        let h1;
+    
+        let x = 0;
+        let y = 0;
+        let mx = 0;
+        let my = 0;
+        let speed = 0.05;
+    
+        window.onload = function(){
+            h1 = document.getElementsByTagName('h1')[0];
+            human = document.getElementsByClassName("human")[0];
+            bg = document.getElementsByClassName("bg")[0];
+
+            window.addEventListener('mousemove', mouseFunc, false);
+    
+            function mouseFunc(e) {
+                x = (e.clientX - window.innerWidth / 2);
+                y = (e.clientY - window.innerHeight / 2);
+            }
+            loop();
+        }
+    
+        function loop() {
+            mx += (x - mx) * speed;
+            my += (y - my) * speed;
+            h1.innerHTML = "x: " + x + " mx: " + mx;
+            human.style.transform = "translate(" + mx + "px, " + my + "px)";
+
+            window.requestAnimationFrame(loop);
+        }
+    
+    </script>
+
+</head>
+<body>
+    <h1>test</h1>
+    <img src="./images/layer-7.png" alt="사람" class="human">
+    <img src="./images/layer-1.jpg" alt="배경" class="bg">
+
+
+
+</body>
+</html>

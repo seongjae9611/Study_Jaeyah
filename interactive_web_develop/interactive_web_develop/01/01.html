@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>delegation.html</title>
+    <link rel="stylesheet" href="./CSS/reset.css">
+    <link rel="stylesheet" href="./CSS/style.css">
+   
+</head>
+<body>
+   <div class="menu">
+       <button class="menu-btn" data-value="1">
+           <img src="./images/ilbuni_1.png" alt="" class="icon">
+           <span class="btn-labe1">일분이 1</span>
+       </button>
+
+       <button class="menu-btn" data-value="2">
+        <img src="./images/ilbuni_2.png" alt="" class="icon">
+        <span class="btn-labe1">일분이 2</span>
+    </button>
+
+    <button class="menu-btn" data-value="3">
+        <img src="./images/ilbuni_3.png" alt="" class="icon">
+        <span class="btn-labe1">일분이 3</span>
+    </button>
+   </div>
+
+   <script>
+    //    const btns = document.querySelectorAll('.menu-btn');
+
+    //     function clickBtnHandler() {
+    //         console.log(this);
+    //     }
+
+    //    for (let i = 0; i < btns.length; i++) {
+    //        btns[i].addEventListener('click', clickBtnHandler);
+    //    }
+
+
+    const menu = document.querySelector('.menu');
+
+    function clickHandler(event) {
+        let elem = event.target;
+        while (!elem.classList.contains('menu-btn')) {
+            elem = elem.parentNode;
+
+            if(elem.nodeName=='BODY') {
+                elem = null;
+                return;
+            }
+        }
+        console.log(elem.dataset.value);
+    }
+
+    menu.addEventListener('click', clickHandler);
+
+   </script>
+</body>
+</html>

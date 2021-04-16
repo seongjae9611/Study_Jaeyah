@@ -1,0 +1,428 @@
+@keyframes ani-head {
+    to { transform: rotateX(-10deg);}
+}
+
+@keyframes ani-running-leg {
+    from {
+        transform: rotateX(-30deg);
+    }
+
+    to {
+        transform: rotateX(30deg);
+    }
+}
+
+@keyframes ani-running-arm {
+    from {
+        transform: rotateY(30deg);
+    }
+
+    to {
+        transform: rotateY(-30deg);
+    }
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 500vw;
+    font-family: 'Apple SD Gothic Neo', 'Roboto', 'Noto Sans Kr', NanumGothic, 'Malgun Gothic', sans-serif;
+    -webkit-overflow-scrolling: touch;
+    color: #555;
+    background: #ffff00;
+    transition: 0.5s;
+}
+
+
+
+.world {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    perspective: 1000px;
+}
+
+.stage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    transform-style: preserve-3d;
+}
+
+.house {
+    width: 100vw;
+    height: 100vh;
+    transform: translateZ(-500vw);
+    transform-style: preserve-3d;
+}
+
+.wall {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.wall_left {
+    left: -500vw;
+    width: 1000vw;
+    background: #f8f8f8;
+    transform: rotateY(90deg);
+}
+
+.wall_right {
+    left: -500vw;
+    width: 1000vw;
+    transform: rotateY(90deg) translateZ(100vw);
+}
+
+.wall_front_a {
+    transform: translateZ(300vw);
+}
+
+.wall_front_b {
+    transform: translateZ(50vw);
+}
+
+.wall_front_c {
+    transform: translateZ(-200vw);
+}
+
+.wall_front_d {
+    transform: translateZ(-450vw);
+}
+
+.wall_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.wall_tittle {
+    font-size: 5rem;
+}
+
+.progress_bar_con {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 5px;
+    background: #555;
+}
+
+.progress_bar {
+    width: 0;
+    height: 100%;
+    background: #00a8ff;
+}
+
+
+/* character */
+.character {
+    position: absolute;
+    left: 12%;
+    bottom: 5%;
+    width: 10vw;
+    height: 15.58vw;
+    transform-style: preserve-3d;
+}
+
+.character[data-direction='forward'] {
+    transform: rotateY(180deg);
+}
+
+.character[data-direction='backward'] {
+    transform: rotateY(0deg);
+}
+
+.character[data-direction='left'] {
+    transform: rotateY(-90deg);
+}
+
+.character[data-direction='right'] {
+    transform: rotateY(90deg);
+}
+
+.character_face_con {
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: 1s;
+}
+
+.character_face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: cover;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.character_face.face_back {
+    transform : rotateY(180deg);
+}
+
+.character_head {
+    top: 0;
+    left: calc(42 / 856 * 100%);
+    z-index: 60;
+    width: calc(770 /856 * 100%);
+    height: calc(648 / 1334 * 100%);
+    transform-origin: center bottom;
+    animation: ani-head 0.6s infinite alternate cubic-bezier(0.46, 0.18, 0.66, 0.93);
+}
+
+.character_head_face.face_front {
+    background-image: url(../image/ilbuni_head_front.png);
+}
+
+.character_head_face.face_back {
+    background-image: url(../image/ilbuni_head_back.png);
+}
+
+.character_torso {
+    left: calc(208 / 856 * 100%);
+    top: calc(647 / 1334 * 100%);
+    z-index: 50;
+    width: calc(428 / 856 * 100%);
+    height: calc(385 / 1334 * 100%);
+    transform-origin: center center;
+}
+
+.character_torso_face.face_front {
+    background-image: url(../image/ilbuni_body_front.png);
+}
+
+.character_torso_face.face_back {
+    background-image: url(../image/ilbuni_body_back.png);
+}
+
+.character_arm_right {
+    left: 0;
+    top: calc(648 / 1334 * 100%);
+    width: calc(244 / 856 * 100%);
+    height: calc(307 / 1334 * 100%);
+    transform-origin: right top;
+}
+
+.character_arm_right .face_front { 
+    background-image: url(../image/ilbuni_arm_0.png); 
+}
+
+.character_arm_right .face_back { 
+    background-image: url(../image/ilbuni_arm_1.png); 
+}
+
+.character_arm_left {
+    left: calc(600 / 856 * 100%);
+    top: calc(648 / 1334 * 100%);
+    width: calc(244 / 856 * 100%);
+    height: calc(307 / 1334 * 100%);
+    transform-origin: left top;
+}
+
+.character_arm_left .face_front { 
+    background-image: url(../image/ilbuni_arm_1.png); 
+}
+
+.character_arm_left .face_back {
+     background-image: url(../image/ilbuni_arm_0.png); 
+}
+
+.character_leg_right {
+    left: calc(200 / 856 * 100%);
+    top: calc(1031 / 1334 * 100%);
+    width: calc(230 /  856 * 100%);
+    height: calc(300 / 1334 * 100%);
+    transform-origin: center top;
+}
+
+.character_leg_right .face_front { 
+    background-image: url(../image/ilbuni_leg_0.png); 
+}
+
+.character_leg_right .face_back { 
+    background-image: url(../image/ilbuni_leg_1.png); 
+}
+
+.character_leg_left {
+    left: calc(414 / 856 * 100%);
+    top: calc(1031 / 1334 * 100%);
+    width: calc(230 /  856 * 100%);
+    height: calc(300 / 1334 * 100%);
+    transform-origin: center top;
+}
+
+.character_leg_left .face_front { 
+    background-image: url(../image/ilbuni_leg_1.png); 
+}
+.character_leg_left .face_back { 
+    background-image: url(../image/ilbuni_leg_0.png); 
+}
+
+.character.running .character_leg_right { 
+    animation: ani-running-leg 0.2s alternate infinite linear; 
+}
+.character.running .character_leg_left { 
+    animation: ani-running-leg 0.2s alternate-reverse infinite linear; 
+}
+.character.running .character_arm { 
+    animation: ani-running-arm 0.2s alternate infinite linear; 
+}
+
+body[data-char='ragirl'] {
+    background: #ff7200;
+}
+
+body[data-char='ragirl'] .character {
+    width: 12vw;
+    height: calc(12vw * 1.4135);
+}
+
+body[data-char='ragirl'] .character_head {
+    left: calc(23 / 948 * 100%);
+    width: calc(920 / 948 * 100%);
+    height: calc(750 / 1340 * 100%);
+}
+
+body[data-char='ragirl'] .character_head_face.face_front { 
+    background-image: url(../image/ragirl_head_front.png); 
+}
+
+body[data-char='ragirl'] .character_head_face.face_back { 
+    background-image: url(../image/ragirl_head_back.png); 
+}
+
+body[data-char='ragirl'] .character_torso {
+    left: calc(273 / 948 * 100%);
+    top: calc(630 / 1340 * 100%);
+    z-index: 50;
+    width: calc(402 / 948 * 100%);
+    height: calc(444 / 1340 * 100%);
+    transform-origin: center center;
+}
+
+body[data-char='ragirl'] .character_torso_face.face_front { 
+    background-image: url(../image/ragirl_body_front.png); 
+}
+
+body[data-char='ragirl'] .character_torso_face.face_back { 
+    background-image: url(../image/ragirl_body_back.png); 
+}
+
+body[data-char='ragirl'] .character_arm_right {
+    left: calc(134 / 948 * 100%);
+    top: calc(709 / 1340 * 100%);
+    width: calc(138 / 948 * 100%);
+    height: calc(300 / 1340 * 100%);
+    transform-origin: right top;
+}
+
+body[data-char='ragirl'] .character_arm_right .face_front { 
+    background-image: url(../image/ragirl_arm_0_front.png); 
+}
+
+body[data-char='ragirl'] .character_arm_right .face_back { 
+    background-image: url(../image/ragirl_arm_1_back.png); 
+}
+
+body[data-char='ragirl'] .character_arm_left {
+    left: calc(675 / 948 * 100%);
+    top: calc(709 / 1340 * 100%);
+    width: calc(138 / 948 * 100%);
+    height: calc(300 / 1340 * 100%);
+    transform-origin: left top;
+}
+
+body[data-char='ragirl'] .character_arm_left .face_front { 
+    background-image: url(../image/ragirl_arm_1_front.png); 
+}
+
+body[data-char='ragirl'] .character_arm_left .face_back { 
+    background-image: url(../image/ragirl_arm_0_back.png); 
+}
+
+body[data-char='ragirl'] .character_leg_right {
+    left: calc(290 / 948 * 100%);
+    top: calc(1075 / 1340 * 100%);
+    width: calc(186 / 948 * 100%);
+    height: calc(264 / 1340 * 100%);
+    transform-origin: center top;
+}
+
+body[data-char='ragirl'] .character_leg_right .face_front { 
+    background-image: url(../image/ragirl_leg_0.png); 
+}
+
+body[data-char='ragirl'] .character_leg_right .face_back {
+    background-image: url(../image/ragirl_leg_1.png); 
+}
+
+body[data-char='ragirl'] .character_leg_left {
+    left: calc(474 / 948 * 100%);
+    top: calc(1075 / 1340 * 100%);
+    width: calc(186 / 948 * 100%);
+    height: calc(264 / 1340 * 100%);
+    transform-origin: center top;
+}
+
+body[data-char='ragirl'] .character_leg-left .face_front { 
+    background-image: url(../image/ragirl_leg_1.png); 
+}
+
+body[data-char='ragirl'] .character_leg-left .face_back { 
+    background-image: url(../image/ragirl_leg_0.png); 
+}
+
+
+
+/* character button */
+.select_character {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    z-index: 100;
+}
+.select_character_btn {
+    width: 40px;
+    height: 40px;
+    margin-left: 5px;
+    border: 0;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: contain;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.select_character_btn_ilbuni {
+    background-image: url(../image/ilbuni_head_front.png);
+    background-size: 36px auto;
+}
+.select_character_btn_ragirl {
+    background-image: url(../image/ragirl_head_front.png);
+    opacity: 0.5;
+}
+body[data-char='ragirl'] .select_character_btn_ilbuni {
+    opacity: 0.5;
+}
+body[data-char='ilbuni'] .select_character_btn_ilbuni,
+body[data-char='ragirl'] .select_character_btn_ragirl {
+    opacity: 1;
+}
