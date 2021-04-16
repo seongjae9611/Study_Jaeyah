@@ -1,0 +1,148 @@
+/* search_form */
+/* .search_form {
+    display: flex;
+    height: 40px;
+}
+
+.search_form input[type='search'] {
+    flex: 1;
+    margin-right: 10px;
+    border: 0;
+    border-radius: 0.3em;
+    font-size: 1rem;
+}
+
+.search_form input[type='submit'] {
+    width: 4em;
+    border: 0;
+    border-radius: 0.3em;
+    font-size: 1rem;
+    background: gold;
+ } */
+
+
+
+/* bullet list */
+/* .info_list_item {   
+    display: flex;
+    margin: 0.5em 0;
+}
+
+.info_list_item:before {
+    content: "🍏";
+    margin-right: 0.5em;
+} */
+
+
+
+/* message */
+/* .user_item{
+    display: flex;
+    margin-bottom: 1.5em;
+}
+.user_photo {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    margin-right: 0.5em;
+    border: 2px solid #333;
+    border-radius: 50%;
+    background: gold;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 150%;
+} */
+
+
+
+/* modal */
+/* .modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background:rgba(0,0,0,0.3);
+}
+
+.dialog {
+    width: 50vw;
+    padding: 1em;
+    border-radius: 1em;
+    background: white;
+} */
+
+
+
+/* card list */
+.card_item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+.card_image {
+    height: 0;
+    padding-bottom: 60%;
+    background: lightgray;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.card_image img{
+    display: none;
+}
+
+.card_desc {
+    flex: 1 1 auto;
+    padding: 1em;
+    background: white;
+}
+
+/* @media (min-width: 600px) {
+    .card_list {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -1rem;
+    }
+
+
+    .card_item {
+        display: flex;
+        width: 50%;
+        padding: 0 1rem;
+    }
+
+    .card_desc {
+     
+    }
+}
+
+@media (min-width: 1200px) {
+    .card_item {
+        width: 33.3333%
+    }
+} */
+
+@media (min-width: 600px) {
+	
+	.card_list {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -1rem;
+	}
+	.card_item {
+		width: 50%;
+		padding: 0 1rem;
+	}
+}
+
+@media (min-width: 1200px) {
+	.card_item {
+		width: 33.33333%;
+	}
+}
