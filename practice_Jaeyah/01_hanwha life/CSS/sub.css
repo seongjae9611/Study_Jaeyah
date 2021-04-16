@@ -1,0 +1,420 @@
+/* COMMON */
+body {
+    font-family: sans-serif;
+}
+.inner {
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn {
+    width: 250px;
+    height: 60px;
+    padding: 10px;
+    border: 1px solid rgb(255, 117, 25);
+    background: rgb(255, 117, 25);
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: .3s;
+}
+
+.btn:hover {
+    border: 1px solid rgb(255, 117, 25);
+    background: #fff;
+    color: rgb(255, 117, 25);
+}
+ 
+.btn_gray {
+    width: 180px;
+    height: 50px;
+    padding: 10px;
+    border: 1px solid rgb(103, 103, 103);
+    background: rgb(51, 51, 51);
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: .3s;
+}
+
+.btn_gray:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(51, 51, 51);
+}
+
+
+/* header */
+header {
+    background: rgb(51, 51, 51);
+}
+
+header .inner {
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+
+
+header .inner .logo {
+    display: flex;
+    align-items: center;
+    margin-right: 75px;
+}
+
+header .inner .btn_group {
+    
+}
+
+header .inner .btn_group ul {
+    display: flex;
+}
+
+header .inner .btn_group ul a {
+    margin-right: 10px;
+}
+
+header .inner .btn_group ul a:last-child {
+    margin-right: 0;
+}
+
+
+
+header .inner .inner .homegroup {
+    
+}
+
+header .inner .homegroup ul {
+    display: flex;
+}
+
+header .inner .homegroup ul li {
+    font-size: 14px;
+    margin-right: 20px;
+}
+
+header .inner .homegroup ul li:last-child {
+    margin-right: 0px;
+}
+
+header .inner .homegroup ul li a {
+    color: rgb(255, 255, 255);
+    padding: 10px;
+}
+
+
+
+
+/* list */
+.list {
+    background: rgb(250, 248, 247);
+}
+
+.list .inner {
+
+}
+
+.list .inner .main_list {
+    display: flex;
+}
+
+.list .inner .main_list .item {
+    width: 240px;
+    height: 55px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list .inner .main_list .item .right20{
+    margin-right: 20px;
+}
+
+.list .inner .main_list .item .left20{
+    margin-left: 20px;
+}
+
+.list .inner .main_list .item:hover {
+    background: rgb(95, 95, 95);
+    
+}
+
+.list .inner .main_list .item .item_name {
+    font-size: 18px;
+}
+
+.list .inner .main_list .item:hover .right20,
+.list .inner .main_list .item:hover .left20,
+.list .inner .main_list .item:hover .item_name {
+    color: rgb(255, 255, 255);
+}
+
+.list .inner .main_list .item .item_contents {
+    display: none;
+}
+
+.list .inner .main_list .item .item_contents .contents_menu {
+
+}
+
+.list .inner .main_list .item .item_contents .contents_menu >ul {
+
+}
+
+.list .inner .main_list .item .item_contents .contents_menu >ul >li {
+
+}
+
+.list .inner .main_list .item .item_contents .contents_menu >ul >li h4 {
+
+}
+
+.list .inner .main_list .item .item_contents .contents_menu >ul >li ul {
+
+}
+
+.list .inner .main_list .item .item_contents .contents_menu >ul >li ul li {
+
+}
+
+
+
+/* visual */
+.visual {
+    height: 450px;
+    background-image: url(../images/bg_02.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.visual .inner {
+
+}
+
+.visual .inner .container {
+    position: relative;
+}
+
+.visual .inner .container .text_group {
+    position: absolute;
+    top: 100px;
+}
+
+.visual .inner .container .text_group h2 {
+    color: rgb(51, 51, 51);
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.visual .inner .container .text_group p {
+    color: rgb(51, 51, 51 );
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.visual .inner .container .btn_group {
+    display: flex;
+    position: absolute;
+    top: 275px;
+}
+
+.visual .inner .container .btn_group a {
+    margin-right: 15px;
+}
+
+
+
+
+/* information */
+.information {
+    
+}
+
+.information .inner {
+    margin-top: 80px;
+}
+
+.information .inner .buy_business {
+
+}
+
+.information .inner .buy_business .text_group {
+    display: flex;
+}
+
+.information .inner .buy_business .text_group h2 {
+    color: rgb(0, 0, 0);
+    font-size: 27px;
+    margin-right: 20px;
+}
+
+.information .inner .buy_business .text_group p {
+    color: rgb(1, 1, 1);
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.information .inner .buy_business ul {
+    display: flex;
+    border: 1px solid rgb(229, 229, 229);
+    background: rgb(249, 249, 249);
+    margin-top: 20px;
+    text-align: center;
+}
+
+.information .inner .buy_business ul li {
+    width: 200px;
+    height: 185px;
+    display: block;
+    border-right: 1px solid rgb(229, 229, 229);
+    padding-top: 30px;
+    box-sizing: border-box;
+}
+
+.information .inner .buy_business ul li:hover {
+    cursor: pointer;
+}
+
+.information .inner .buy_business ul li img {
+
+}
+
+.information .inner .buy_business ul li p {
+
+}
+
+.information .inner .sell_business {
+
+}
+
+.information .inner .sell_business .text_group {
+    display: flex;
+}
+
+.information .inner .sell_business .text_group h2 {
+    color: rgb(0, 0, 0);
+    font-size: 27px;
+    margin-top: 75px;
+    margin-right: 20px;
+}
+
+.information .inner .sell_business .text_group p {
+    color: rgb(1, 1, 1);
+    font-size: 15px;
+    margin-top: 85px;
+}
+
+.information .inner .sell_business ul {
+    display: flex;
+    border: 1px solid rgb(229, 229, 229);
+    background: rgb(249, 249, 249);
+    margin-top: 20px;
+    text-align: center;
+}
+
+.information .inner .sell_business ul li {
+    width: 200px;
+    height: 185px;
+    display: block;
+    border-right: 1px solid rgb(229, 229, 229);
+    padding-top: 30px;
+    box-sizing: border-box;
+}
+
+.information .inner .sell_business ul li:hover {
+    cursor: pointer;
+}
+
+.information .inner .sell_business ul li img {
+    
+}
+
+.information .inner .sell_business ul li p {
+
+}
+
+
+
+/* menu */
+.menu {
+    margin-top: 80px;
+    border-top: 1px solid rgb(229, 229, 229);
+    border-bottom: 1px solid rgb(229, 229, 229);
+}
+
+.menu .inner {
+    display: flex;
+    padding: 35px 0;
+}
+
+.menu .inner .inner_left {
+    width: 80%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.menu .inner .menu_group {
+    display: flex;
+}
+
+.menu .inner .menu_group p {
+    font-size: 16px;
+    margin-right: 40px;
+}
+.menu .inner .menu_group p a {
+    color: rgb(68, 68, 68);
+}
+
+.menu .inner .inner_right {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.menu .inner .inner_right .sub_group {
+    
+}
+
+/* footer */
+footer {
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+footer .inner {
+
+}
+
+footer .inner .container1 {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+footer .inner .container1 p {
+    font-size: 12px;
+    color: rgb(68, 68, 68);
+    margin-right: 15px;
+}
+
+footer .inner .container2 {
+
+}
+
+footer .inner .container2 p {
+    font-size: 8px;
+    color: rgb(68, 68, 68);
+}
